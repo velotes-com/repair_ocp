@@ -9,7 +9,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display_links = ("str_number_order", )
     list_editable = ("priority", )
     readonly_fields = ("watch_count", )
-    list_filter = ("status", "priority", )
+    list_filter = ("status", "priority", 'number_order')
 
     def str_number_order(self, obj):
         return f"Заказ № {obj.number_order:04d}"
